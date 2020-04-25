@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
   
   def create 
-    if current_user
+    if !params[:name].present?
       redirect_to '/new'
     else
       session[:name] = params[:name]
