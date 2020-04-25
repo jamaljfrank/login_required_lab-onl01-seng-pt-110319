@@ -6,7 +6,7 @@ class SecretsController < ApplicationController
     if !logged_in?
       redirect_to login_path
     else 
-      redirect_to show_path
+      redirect_to new_path
     end
   end
 end
