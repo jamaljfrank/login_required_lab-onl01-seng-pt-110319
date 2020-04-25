@@ -3,8 +3,10 @@ class SecretsController < ApplicationController
   end
   
   def show 
-    if !logged_in?
-      redirect_to login_path
+    if current_user
+      render 'sessions/show'
+    else
+      redirect_to '/new'
     end
   end
 end
