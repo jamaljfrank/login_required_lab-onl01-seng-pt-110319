@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   end
     
   def destroy
-    if session[:name]
+    if current_user
       session.delete :name
     end
   end
